@@ -1,10 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Tab, Tabs } from '@blueprintjs/core';
 import SignIn from './SignIn';
+import SignUp from './SignUp';
 
 const Container = styled.div`
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 1fr 1fr;
 `;
 
 const LeftPane = styled.aside`
@@ -30,11 +32,19 @@ const RightPane = styled.main`
 `;
 
 const AuthContainer: React.FC = () => {
+  const [navbarTabId, setNavbarTabId] = React.useState();
   return (
     <Container>
       <LeftPane className="bp3-heading">Vorplex</LeftPane>
       <RightPane>
-        <SignIn />
+        <Tabs
+          renderActiveTabPanelOnly
+          onChange={setNavbarTabId}
+          selectedTabId={navbarTabId}
+        >
+          <Tab id="sign-in" title="Sign In" panel={<SignIn style={{ width: '25vw' }} />} />
+          <Tab id="sign-up" title="Sign Up" panel={<SignUp style={{ width: '25vw' }} />} />
+        </Tabs>
       </RightPane>
     </Container>
   );

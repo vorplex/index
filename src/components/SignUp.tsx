@@ -2,8 +2,8 @@ import React from 'react';
 import { auth } from 'firebase';
 import { Button, FormGroup, InputGroup, Callout } from '@blueprintjs/core';
 
-const SignIn: React.FC<React.HTMLAttributes<HTMLFormElement>> = props => {
-  const [signInError, setSignInError] = React.useState('');
+const SignUp: React.FC<React.HTMLAttributes<HTMLFormElement>> = props => {
+  const [signUp, setSignUpError] = React.useState('');
   const [email, setEmail] = React.useState('');
   const onEmailChange = React.useCallback(
     ({ target }) => setEmail(target.value),
@@ -20,10 +20,10 @@ const SignIn: React.FC<React.HTMLAttributes<HTMLFormElement>> = props => {
       onSubmit={e => {
         e.preventDefault();
         auth()
-          .signInWithEmailAndPassword(email, password)
+          .createUserWithEmailAndPassword(email, password)
           .then(console.log)
           .catch(function(error) {
-            setSignInError(error.message);
+            setSignUpError(error.message);
           });
       }}
     >
@@ -45,10 +45,10 @@ const SignIn: React.FC<React.HTMLAttributes<HTMLFormElement>> = props => {
           placeholder="Password"
         />
       </FormGroup>
-      <Button type="submit">Sign In</Button>
-      {signInError && <Callout style={{ marginTop: 5 }}>{signInError}</Callout>}
+      <Button type="submit">Sign Up</Button>
+      {signUp && <Callout style={{ marginTop: 5 }}>{signUp}</Callout>}
     </form>
   );
 };
 
-export default SignIn;
+export default SignUp;
