@@ -41,7 +41,10 @@ module.exports = {
     ]
   },
   plugins: [
-    new Dotenv(),
+    new Dotenv({
+      systemvars: true,
+      defaults: true
+    }),
     new CleanWebpackPlugin(),
     new webpack.DefinePlugin({
       __DEV__
