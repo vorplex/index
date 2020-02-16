@@ -35,15 +35,25 @@ const AuthContainer: React.FC = () => {
   const [navbarTabId, setNavbarTabId] = React.useState();
   return (
     <Container>
-      <LeftPane className="bp3-heading">Vorplex</LeftPane>
+      <LeftPane>Vorplex</LeftPane>
       <RightPane>
         <Tabs
           renderActiveTabPanelOnly
+          id="auth-tabs"
           onChange={setNavbarTabId}
           selectedTabId={navbarTabId}
         >
-          <Tab id="sign-in" title="Sign In" panel={<SignIn style={{ width: '25vw' }} />} />
-          <Tab id="sign-up" title="Sign Up" panel={<SignUp style={{ width: '25vw' }} />} />
+          <Tab
+            id="sign-in"
+            title="Sign In"
+            className="fuck"
+            panel={<SignIn style={{ width: '25vw' }} />}
+          />
+          <Tab
+            id="sign-up"
+            title="Sign Up"
+            panel={<SignUp style={{ width: '25vw' }} />}
+          />
         </Tabs>
       </RightPane>
     </Container>
