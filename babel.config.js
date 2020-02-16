@@ -15,5 +15,5 @@ module.exports = {
       { loose: true, useBuiltIns: 'usage', corejs: 3, targets }
     ]
   ],
-  plugins: ['@babel/plugin-transform-runtime']
+  plugins: [['@babel/plugin-transform-runtime', { useESModules: true }]]
 };

@@ -8,22 +8,28 @@
     "start": "NODE_ENV=development webpack-dev-server"
   },
   "dependencies": {
+    "@babel/runtime": "^7.8.4",
+    "core-js": "^3.6.4",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "styled-components": "^5.0.1"
+  },
+  "devDependencies": {
     "@babel/core": "^7.8.4",
     "@babel/plugin-transform-runtime": "^7.8.3",
     "@babel/preset-env": "^7.8.4",
     "@babel/preset-react": "^7.8.3",
     "@babel/preset-typescript": "^7.8.3",
-    "@babel/runtime": "^7.8.4",
+    "@types/react": "^16.9.19",
+    "@types/react-dom": "^16.9.5",
     "babel-loader": "^8.0.6",
-    "core-js": "^3.6.4",
     "css-loader": "^3.4.2",
+    "fork-ts-checker-webpack-plugin": "^4.0.4",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.9.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "styled-components": "^5.0.1",
     "terser-webpack-plugin": "^2.3.5",
+    "typescript": "^3.7.5",
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3"
