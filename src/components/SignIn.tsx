@@ -1,5 +1,6 @@
 import React from 'react';
-import { auth } from 'firebase';
+import firebase from 'firebase/app';
+import 'firebase/auth';
 import { Button, FormGroup, InputGroup, Callout } from '@blueprintjs/core';
 
 const SignIn: React.FC<React.HTMLAttributes<HTMLFormElement>> = props => {
@@ -19,7 +20,8 @@ const SignIn: React.FC<React.HTMLAttributes<HTMLFormElement>> = props => {
       {...props}
       onSubmit={e => {
         e.preventDefault();
-        auth()
+        firebase
+          .auth()
           .signInWithEmailAndPassword(email, password)
           .then(console.log)
           .catch(function(error) {
