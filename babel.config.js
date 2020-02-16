@@ -15,5 +15,8 @@ module.exports = {
       { loose: true, useBuiltIns: 'usage', corejs: 3, targets }
     ]
   ],
-  plugins: [['@babel/plugin-transform-runtime', { useESModules: true }]]
+  plugins: [
+    ['@babel/plugin-transform-runtime', { useESModules: true }],
+    'react-hot-loader/babel'
+  ]
 };
